@@ -1,0 +1,13 @@
+body { min-height: 100vh; display: flex; flex-direction: column; }
+header{ } 
+
+main{flex-grow: 1;} 
+
+.click-obj{
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  background-color: var(--primary);
+}
+
+footer{ }
