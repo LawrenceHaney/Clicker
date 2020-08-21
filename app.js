@@ -12,7 +12,7 @@ let incrimenter = 0
 //TODO shop objects
 let shop= [
   {
-    name: "test1",
+    name: "Wooden Crank",
     cost: 10,
     inflate: 2,
     target: "clickmod",
@@ -22,7 +22,7 @@ let shop= [
     notes: "a short discription of this object",
   },
   {
-    name: "test4",
+    name: "Metal Crank",
     cost: 10000,
     inflate: 2,
     target: "clickmod",
@@ -32,7 +32,7 @@ let shop= [
     notes: "a short discription of this object",
   },
   {
-    name: "test2",
+    name: "Wooden Gear",
     cost: 100,
     inflate: 2,
     target: "incrimenter",
@@ -42,7 +42,7 @@ let shop= [
     notes: "a short discription of this object",
   },
   {
-    name: "test3",
+    name: "Metal Gear",
     cost: 100000,
     inflate: 2,
     target: "incrimenter",
@@ -112,7 +112,7 @@ function drawmarket(){
   let template = ``
   shop.forEach(powerup => 
     template += `
-    <div class="card col-12 col-lg-6">
+    <div class="card col-12 col-lg-2">
     <div class="card-body">
     <h4 class="card-title">${powerup.name}</h6>
     <h6>cost: ${powerup.cost}</h6>

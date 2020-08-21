@@ -9,27 +9,26 @@
   <title>Click</title>
 </head>
 <body>
-  <header class="container-fluid bg-primary"><h1>Clicker</h1></header>
-  <main class="container">
-    <section id="score" class="row">
-      <div class="card col-12 text-center">
+  <header class="container-fluid bg-primary"><h1>Cog of duty</h1></header>
+  <main class="container-fluid text-center bg-cogs">
+    <section id="score" class="row justify-content-center">
+      <div class="card col-8">
         <h3>You have: <span id="money"></span></h3>
       </div>
     </section>
-    <section class="row" id="shop">
-      <div class="card col-4 bg-seconday">
-        <div class="card text-center">
-          <h3>Click power: <span id="clickpower"></span></h3>
+    <section class="row justify-content-center" id="shop">
+        <div class="card col-8">
+          <h3 class="">Crank power: <span id="clickpower"></span></h3>
         </div>
-        <div class="card text-center">
-          <h3>Per cycle: <span id="cycle"></span></h3>
+        <div class="card col-8">
+          <h3>Cranks per second: <span id="cycle"></span></h3>
         </div>
       </div>
     </section>
-    <section class="row text-center p-5">
+    <section class="row p-5 justify-content-center">
       <button type="button" class="btn btn-primary click-obj" onclick="mine()"></button>
     </section>
-    <section id="market" class="row"></section>
+    <section id="market" class="row m-5 justify-content-around"></section>
   </main>
   <footer class="container-fluid bg-primary"><h6>Checkpoint 2</h6><p>so long and thanks for all the fish</p></footer>
 
