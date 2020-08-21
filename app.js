@@ -14,16 +14,42 @@ let shop= [
   {
     name: "test1",
     cost: 10,
+    inflate: 2,
     target: "clickmod",
     power: 1,
-    id: IDgen()
+    id: IDgen(),
+    icon:"fas fa-mouse-pointer",
+    notes: "a short discription of this object",
+  },
+  {
+    name: "test4",
+    cost: 10000,
+    inflate: 2,
+    target: "clickmod",
+    power: 10,
+    id: IDgen(),
+    icon:"fas fa-mouse-pointer",
+    notes: "a short discription of this object",
   },
   {
     name: "test2",
     cost: 100,
+    inflate: 2,
     target: "incrimenter",
     power: 10,
-    id: IDgen()
+    id: IDgen(),
+    icon:"fas fa-history",
+    notes: "a short discription of this object",
+  },
+  {
+    name: "test3",
+    cost: 100000,
+    inflate: 2,
+    target: "incrimenter",
+    power: 100,
+    id: IDgen(),
+    icon:"fas fa-history",
+    notes: "a short discription of this object",
   }
 ]
 
@@ -40,11 +66,13 @@ function verifypurchase(id){
   let elm = findbyID(id)
   if (player.currancy >= elm.cost && elm.target == "clickmod"){
     player.currancy = player.currancy - elm.cost
+    elm.cost = Math.floor(elm.cost * elm.inflate)
     let mod = elm.power
     buyclicks(mod)
   }
   if (player.currancy >= elm.cost && elm.target == "incrimenter"){
     player.currancy = player.currancy - elm.cost
+    elm.cost = Math.floor(elm.cost * elm.inflate)
     let mod = elm.power
     buyinctimenter(mod)
   }
@@ -55,11 +83,13 @@ function verifypurchase(id){
 function buyclicks(mod){
   clickmod += mod
   drawshop()
+  drawmarket()
 }
 
 function buyinctimenter(mod){
   incrimenter += mod
   drawshop()
+  drawmarket()
 }
 
 //TODO incrimenter
@@ -82,10 +112,12 @@ function drawmarket(){
   let template = ``
   shop.forEach(powerup => 
     template += `
-    <div class="card">
+    <div class="card col-12 col-lg-6">
     <div class="card-body">
-    <h6 class="card-title">${powerup.name}</h6>
-    <button id="${powerup.id}" type="button" class="btn btn-warning" onclick="verifypurchase('${powerup.id}')">${powerup.cost}</button>
+    <h4 class="card-title">${powerup.name}</h6>
+    <h6>cost: ${powerup.cost}</h6>
+    <p>${powerup.notes}</p>
+    <button id="${powerup.id}" type="button" class="btn btn-warning" onclick="verifypurchase('${powerup.id}')"><i class="${powerup.icon}"></i></button>
     </div>
     </div>
     `
@@ -110,6 +142,6 @@ function findbyID(id){
 }
 
 setInterval(drawmoney, 1)
-setInterval(update, 2000)
+setInterval(update, 1000)
 drawmarket()
 drawshop()
