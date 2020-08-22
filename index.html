@@ -5,32 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://kit.fontawesome.com/70a305de4c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="style.css">
-  <title>Click</title>
+  <title id="title-bar">Click</title>
 </head>
 <body>
-  <header class="container-fluid bg-primary"><h1>Cog of duty</h1></header>
-  <main class="container-fluid text-center bg-cogs">
+  <header class="container-fluid bg-dark text-primary p-3 text-center text-shadow-seconday"><h1>Cog of duty</h1></header>
+  <main class="container-fluid text-center bg-cogs p-4">
     <section id="score" class="row justify-content-center">
-      <div class="card col-8">
-        <h3>You have: <span id="money"></span></h3>
+      <div class="card col-8 bg-success text-primary text-shadow-seconday">
+        <h3>Junk: <span id="money"></span></h3>
       </div>
     </section>
-    <section class="row justify-content-center" id="shop">
-        <div class="card col-8">
+    <section class="row justify-content-center " id="shop">
+        <div class="card col-8 bg-success text-primary text-shadow-seconday">
           <h3 class="">Crank power: <span id="clickpower"></span></h3>
         </div>
-        <div class="card col-8">
+        <div class="card col-8 bg-success text-primary text-shadow-seconday">
           <h3>Cranks per second: <span id="cycle"></span></h3>
         </div>
       </div>
     </section>
     <section class="row p-5 justify-content-center">
-      <button type="button" class="btn btn-primary click-obj" onclick="mine()"></button>
+      <a class="click-obj fa-spin" onclick="mine()"></a>
     </section>
     <section id="market" class="row m-5 justify-content-around"></section>
   </main>
-  <footer class="container-fluid bg-primary"><h6>Checkpoint 2</h6><p>so long and thanks for all the fish</p></footer>
+  <footer class="container-fluid bg-dark"><h6 class="text-primary">Checkpoint 2</h6><p class="text-secondary">so long and thanks for all the fish</p></footer>
 
   <script src="./app.js"></script>
   <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script> <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous'></script> <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>

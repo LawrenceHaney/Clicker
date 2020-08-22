@@ -19,7 +19,7 @@ let shop= [
     power: 1,
     id: IDgen(),
     icon:"fas fa-mouse-pointer",
-    notes: "a short discription of this object",
+    notes: "A bit more then some twigs lashed together, but it should make cranking a bit less work",
   },
   {
     name: "Metal Crank",
@@ -29,7 +29,7 @@ let shop= [
     power: 10,
     id: IDgen(),
     icon:"fas fa-mouse-pointer",
-    notes: "a short discription of this object",
+    notes: "A study metal crank with a easy to grip handle. This should make cranking much easier",
   },
   {
     name: "Wooden Gear",
@@ -39,17 +39,17 @@ let shop= [
     power: 10,
     id: IDgen(),
     icon:"fas fa-history",
-    notes: "a short discription of this object",
+    notes: "Cobbled together with the junk spat out by the machine, attaching it near your crank might speed things up",
   },
   {
-    name: "Metal Gear",
+    name: "Rusty Gear",
     cost: 100000,
     inflate: 2,
     target: "incrimenter",
     power: 100,
     id: IDgen(),
     icon:"fas fa-history",
-    notes: "a short discription of this object",
+    notes: "A hulking rusted gear with sevral of its teeth missing, its large size makes it unwheildy but it spins without rest",
   }
 ]
 
@@ -58,6 +58,7 @@ let shop= [
 //TODO on click action
 function mine(){
   player.currancy += clickmod
+  player.allclicks ++
   drawshop()
 }
 
@@ -102,6 +103,7 @@ function update(){
 //TODO dynamicly draw curency
 function drawmoney(){
   document.getElementById("money").innerText = JSON.stringify(player.currancy)
+  document.getElementById("title-bar").innerText = "You've cranked: " + JSON.stringify(player.allclicks) + " times"
 }
 
 //TODO dynamicly draw incrimenter
@@ -112,7 +114,7 @@ function drawmarket(){
   let template = ``
   shop.forEach(powerup => 
     template += `
-    <div class="card col-12 col-lg-2">
+    <div class="card col-12 col-lg-3 bg-success text-primary text-shadow-seconday">
     <div class="card-body">
     <h4 class="card-title">${powerup.name}</h6>
     <h6>cost: ${powerup.cost}</h6>
