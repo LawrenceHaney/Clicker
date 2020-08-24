@@ -1,7 +1,11 @@
 body { min-height: 100vh; display: flex; flex-direction: column; }
 header{ } 
 
-main{flex-grow: 1;} 
+main{flex-grow: 1;}
+
+.strech{
+  height: 50vh;
+}
 
 .bg-cogs{
   background-image: url("./giphy.gif");
@@ -12,8 +16,8 @@ main{flex-grow: 1;}
   text-shadow: 1px 1px 5px var(--dark);
 }
 .click-obj{
-  height: 200px;
-  width: 200px;
+  height: 50vh;
+  width: 25%;
   background-image: url("./maincog.png");
   background-position: center center;
   background-size: cover;

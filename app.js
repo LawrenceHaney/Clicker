@@ -18,17 +18,17 @@ let shop= [
     target: "clickmod",
     power: 1,
     id: IDgen(),
-    icon:"fas fa-mouse-pointer",
+    icon:"fas fa-ruler",
     notes: "A bit more then some twigs lashed together, but it should make cranking a bit less work",
   },
   {
     name: "Metal Crank",
-    cost: 10000,
+    cost: 1000,
     inflate: 2,
     target: "clickmod",
     power: 10,
     id: IDgen(),
-    icon:"fas fa-mouse-pointer",
+    icon:"fas fa-wrench",
     notes: "A study metal crank with a easy to grip handle. This should make cranking much easier",
   },
   {
@@ -38,17 +38,17 @@ let shop= [
     target: "incrimenter",
     power: 10,
     id: IDgen(),
-    icon:"fas fa-history",
+    icon: "fas fa-cogs",
     notes: "Cobbled together with the junk spat out by the machine, attaching it near your crank might speed things up",
   },
   {
     name: "Rusty Gear",
-    cost: 100000,
+    cost: 10000,
     inflate: 2,
     target: "incrimenter",
     power: 100,
     id: IDgen(),
-    icon:"fas fa-history",
+    icon: "fas fa-cogs",
     notes: "A hulking rusted gear with sevral of its teeth missing, its large size makes it unwheildy but it spins without rest",
   }
 ]
@@ -115,7 +115,7 @@ function drawmarket(){
   shop.forEach(powerup => 
     template += `
     <div class="card col-12 col-lg-3 bg-success text-primary text-shadow-seconday">
-    <div class="card-body">
+    <div class="card-body d-flex flex-column justify-content-around">
     <h4 class="card-title">${powerup.name}</h6>
     <h6>cost: ${powerup.cost}</h6>
     <p>${powerup.notes}</p>
